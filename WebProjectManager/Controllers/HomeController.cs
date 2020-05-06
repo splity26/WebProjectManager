@@ -13,16 +13,23 @@ namespace WebProjectManager.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Users()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Your application user page.";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Projects()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your projects page.";
+
+            return View();
+        }
+
+        public ActionResult Allocations()
+        {
+            ViewBag.Message = "Your project allocation page.";
 
             return View();
         }

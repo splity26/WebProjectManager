@@ -2,12 +2,14 @@
     ViewBag.Title = "Allocations";
 }
 
-<h2>Allocation</h2>
+<h2>Allocations</h2>
 
+<div class="span6">
+    <input type="text" id ="filterProj" onkeyup="myFunction()" placeholder="Search for project.." />
+</div>
 <div class="span10">
-    <h2>Projects</h2>
 
-    <table class="table">
+    <table id="allocTable" class="table">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">Assignee</th>

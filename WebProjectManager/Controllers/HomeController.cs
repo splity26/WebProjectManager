@@ -54,12 +54,12 @@ namespace WebProjectManager.Controllers
                 //data transfer object
                 allocationsList.Add(new AllocationDTO() { Username = users.Username, ProjectName = projects.ProjectName });
             }
-      
+
             return View(allocationsList);
         }
 
         [ChildActionOnly]
-        public PartialViewResult FilterByProjectName()
+        public PartialViewResult FilterByProjectName(string searchName)
         {
             var allocations = _repo.GetAllocation();
 
@@ -69,16 +69,18 @@ namespace WebProjectManager.Controllers
                 var users = _repo.GetUsers().Where(u => u.Id == allocation.UsersId).FirstOrDefault();
                 var projects = _repo.GetProjects().Where(p => p.Id == allocation.ProjectsId).FirstOrDefault();
 
-                //data transfer object
                 allocationsList.Add(new AllocationDTO() { Username = users.Username, ProjectName = projects.ProjectName });
             }
 
-            // allocationsList.Where(s => s.ProjectName == TextBox.);
+
+             var result = allocationsList.Where(s => s.ProjectName.Contains(searchName));
+
+
             // + refresh la pagina
             // vazut 
 
 
-            return PartialView();
+            return PartialView(result);
         }
     }
 }

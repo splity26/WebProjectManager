@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,5 @@ namespace WebProjectManager.Data
         public string Username { get; set; }
 
         public string ProjectName { get; set; }
-
     }
 }

@@ -1,7 +1,32 @@
-﻿
-@{
-    ViewBag.Title = "Projects";
-}
+﻿@model IEnumerable<WebProjectManager.Data.Projects>
 
-<h2>Project</h2>
+@{
+    ViewBag.Title = "Projects available";
+}
+<div class="span10">
+    <h2>Projects</h2>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Project</th>
+                <th scope="col">Details</th>
+                <th scope="col">Start</th>
+                <th scope="col">End</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var proj in Model)
+            {
+            <tr>
+                <td>@proj.ProjectName</td>
+                <td>@proj.Details</td>
+                <td>@proj.ProjectStart.ToShortDateString()</td>
+                <td>@proj.ProjectEnd.ToShortDateString()</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
 

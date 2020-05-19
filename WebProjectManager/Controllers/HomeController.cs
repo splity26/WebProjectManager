@@ -76,10 +76,6 @@ namespace WebProjectManager.Controllers
              var result = allocationsList.Where(s => s.ProjectName.Contains(searchName));
 
 
-            // + refresh la pagina
-            // vazut 
-
-
             return PartialView(result);
         }
     }
